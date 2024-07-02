@@ -14,7 +14,7 @@ function paye(salary) {
     let range2B = second * .25; //maximum taxable amount for "second" above
     let range3A = (tierThree * .3); //tax on taxable pay less than "third" above
     let range3B = third * .3; //maximum taxable amount for "second" above
-    let range4A = (fourth * .325); //tax on taxable pay less than "fourth" above
+    let range4A = (tierFour * .325); //tax on taxable pay less than "fourth" above
     let range4B = fourth * .325;//maximum taxable amount for "fourth" above
     let range5 = tierFive * .35; //tax on taxable pay greater than 800,000
     let tax2 = (range1B + range2A);
@@ -47,6 +47,5 @@ function paye(salary) {
     }else if (tierFive > 0) {
         return tax8;
     }
-
 }
-console.log(`Tax Before Relief:` + paye(500000));
+console.log(`Tax Before Relief:` + paye(700000));
