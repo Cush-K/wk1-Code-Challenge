@@ -1,3 +1,5 @@
+const salo = prompt(`Please enter your Salary`)
+
 function paye(salary) {
     const second = 8333; //range betweeen 24,000 & 32,333
     const third = 467667; //Range between 32,333 & 500,000
@@ -111,19 +113,20 @@ function netSalary(sal){
     const housingLevy = (.015*sal);
     const housingRelief = Math.ceil((.15*housingLevy));
     const nhifRelief = Math.ceil((.15*nhifAmount));
-    const payeAmount = (paye(sal)-(housingRelief+nhifRelief));
+    const payeAmount = Math.round((paye(sal)-(housingRelief+nhifRelief))*100)/100;
     const net = sal - (payeAmount + nhifAmount + housingLevy+nssfAmount)
     
-console.log(`Paye ` +payeAmount);
-console.log(`NHIF ` +nhifAmount);
-console.log(`H.Levy ` +housingLevy);
-console.log(`H.Relief ` +housingRelief);
-console.log(`NHIF.R ` +nhifRelief);
-console.log(`NSSf ` +nssfAmount)
-console.log(`Taxable Pay:` + `${sal-nssfAmount}`);
+alert(`NSSF: ` +nssfAmount)
+alert(`Taxable Pay:` + `${sal-nssfAmount}`);
+alert(`Paye: ` +payeAmount);
+alert(`NHIF: ` +nhifAmount);
+alert(`Housing Levy: ` +housingLevy);
+alert(`Housing Relief: ` +housingRelief);
+alert(`NHIF Relief: ` +nhifRelief);
+
 
     return net;
 }
 
 
-console.log(`Your Net Salary: ` +netSalary(70000));
+alert(`Your Net Salary: ` +netSalary(salo));
