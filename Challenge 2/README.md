@@ -7,3 +7,5 @@ Write a program that takes the speed of a car as input e.g 80. If the speed is l
 
 
 The solution provided allows one to prompt a user to input the speed of a car, then proceeds to let the user know whether the driver's speed is okay, and if not, it indicated that the driver has earned demerit points. Once a driver exceeds 12 demerits points, their licence is suspended.
+
+To run the program, open the challenge2.html file and follow the prompts.
