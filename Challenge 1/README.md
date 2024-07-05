@@ -6,3 +6,5 @@ Write a function that prompts the user to input student marks. The input should 
 
 
 The solution provided allows one to prompt a user to input a student's marks for grading. it then goes ahead to indicate the grade within which the marks provided are.
+
+To run this program, open the challenge1.html file, and follow the prompts.
