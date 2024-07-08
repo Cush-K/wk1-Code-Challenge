@@ -9,9 +9,9 @@ function speeding(speed){
         (speed>70){
          let points = (speed - speedLimit)/5;
                              
-                if(points >=0 && points < 12){
+                if(points >=0 && points <= 12){
                     return `You have earned ${points} Demerit Points.` 
-                }else if (points>=12){
+                }else if (points>12){
                     return `License Suspended`;
                 }
                 return points;
