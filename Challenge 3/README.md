@@ -12,3 +12,6 @@ Links to an external site.-  Links to an external site.Links to an external site
 
 
 the solution provided allows the user to input their salary. The program then goes on to calculate the tax deductible as well as the reliefs that they are entitled to. Furthermore the program allows the user to check their Net Salary in accordance to the guidelines provided by the KRA and Aren.
+
+
+To run the program, open the challenge3.html file and follow the prompts.
