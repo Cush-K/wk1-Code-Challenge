@@ -1,4 +1,4 @@
-const salo = prompt(`Please enter your Salary`)
+// const salo = prompt(`Please enter your Salary`)
 
 function paye(salary) {
     const second = 8333; //range betweeen 24,000 & 32,333
@@ -102,31 +102,48 @@ function nhif (salary){
 
 
 function netSalary(sal){
-    function nssf (salary){if(salary>0 && salary <= 36000){
+    function nssf (salary){
+        if(salary>0 && salary <= 36000){
         return .06*salary
     }else{
        return 2160;
     }
     }
+
+    const benefits = 20000 //prompt("Enter your Benefits")); 
+    function benefit (benfs){
+        if(benfs<=3000){
+            return 0;
+        }else {
+            return .3*benfs;
+        }
+    }
+  
+
     const nssfAmount = nssf(sal)
     const nhifAmount = nhif(sal);
     const housingLevy = (.015*sal);
     const housingRelief = Math.ceil((.15*housingLevy));
     const nhifRelief = Math.ceil((.15*nhifAmount));
     const payeAmount = Math.round((paye(sal)-(housingRelief+nhifRelief))*100)/100;
-    const net = sal - (payeAmount + nhifAmount + housingLevy+nssfAmount)
-    
-alert(`NSSF: ` +nssfAmount)
-alert(`Taxable Pay:` + `${sal-nssfAmount}`);
-alert(`Paye: ` +payeAmount);
-alert(`NHIF: ` +nhifAmount);
-alert(`Housing Levy: ` +housingLevy);
-alert(`Housing Relief: ` +housingRelief);
-alert(`NHIF Relief: ` +nhifRelief);
+    const benefitAmount = benefit(benefits);
+    const net = sal - (payeAmount + nhifAmount + housingLevy)
+    const netMinusBenTax = (net+benefits) - (benefitAmount+nssfAmount)
+    const taxed = (sal-nssfAmount)
+    const totalTaxes = taxed+benefits
+  
+
+console.log(`NSSF: ` +nssfAmount)
+console.log(`Taxable Pay:` + totalTaxes);
+console.log(`Paye: ` +`${payeAmount+benefitAmount}`);
+console.log(`NHIF: ` +nhifAmount);
+console.log(`Housing Levy: ` +housingLevy);
+console.log(`Housing Relief: ` +housingRelief);
+console.log(`NHIF Relief: ` +nhifRelief);
 
 
-    return net;
+    return netMinusBenTax;
 }
 
 
-alert(`Your Net Salary: ` +netSalary(salo));
+console.log(`Your Total Take Home: ` +netSalary(500000));
